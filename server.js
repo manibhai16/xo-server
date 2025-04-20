@@ -7,11 +7,11 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: 'https://client-murex-eta.vercel.app/', // 🔁 Replace this with your actual Vercel URL
+      origin: 'https://client-3ab6y11vm-manishs-projects-33fcb145.vercel.app/', // 🔁 Replace this with your actual Vercel URL
       methods: ['GET', 'POST']
     }
   });
-  
+
   app.get('/', (req, res) => {
     res.send('Backend is running.');
   });
