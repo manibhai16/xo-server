@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: 'https://your-vercel-app.vercel.app', // 🔁 Replace this with your actual Vercel URL
+      origin: 'https://client-murex-eta.vercel.app/', // 🔁 Replace this with your actual Vercel URL
       methods: ['GET', 'POST']
     }
   });
