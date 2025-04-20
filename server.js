@@ -12,6 +12,10 @@ const io = new Server(server, {
     }
   });
   
+  app.get('/', (req, res) => {
+    res.send('Backend is running.');
+  });
+  
 
 // Serve static files from client folder
 if (process.env.NODE_ENV !== 'production') {
