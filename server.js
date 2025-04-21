@@ -7,7 +7,8 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: 'https://client-murex-eta.vercel.app/', // 🔁 Replace this with your actual Vercel URL
+      origin:[ 'https://client-murex-eta.vercel.app', // 🔁 Replace this with your actual Vercel URL
+                'http://localhost:3000'],
       methods: ['GET', 'POST']
     }
   });
@@ -26,7 +27,9 @@ if (process.env.NODE_ENV !== 'production') {
 const rooms = {};
 
 io.on('connection', socket => {
+  console.log(`Client connected: ${socket.id}`);
   socket.on('joinRoom', room => {
+    console.log(`Socket ${socket.id} joining room: ${room}`);
     socket.join(room);
     if (!rooms[room]) rooms[room] = { players: [] };
     if (rooms[room].players.length >= 2) return;
